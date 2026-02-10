@@ -43,9 +43,9 @@ PORT=3307
 # SMTP Email Configuration
 SMTP_HOST=smtp.gmail.com
 SMTP_PORT=587
-SMTP_USER=shashankm@klesnc.edu.in
-SMTP_PASS=wsrs yuie rhwq xjii
-SMTP_FROM=shashankm@klesnc.edu.in
+SMTP_USER=your email
+SMTP_PASS=your passkey
+SMTP_FROM=Your email
 
 
 4. Start the server:
