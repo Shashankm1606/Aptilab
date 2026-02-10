@@ -29,13 +29,24 @@ USE aptitude_db;
 
 3. Create a `.env` file in `backend/`:
 ```env
-GEMINI_API_KEY=your_gemini_key_here
-DB_HOST=localhost
+
+
+# MySQL Database Configuration
+DB_HOST=127.0.0.1
 DB_USER=root
-DB_PASS=your_mysql_password
+DB_PASS=
 DB_NAME=aptitude_db
-PORT=3000
-```
+
+# Server Port
+PORT=3307
+
+# SMTP Email Configuration
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=shashankm@klesnc.edu.in
+SMTP_PASS=wsrs yuie rhwq xjii
+SMTP_FROM=shashankm@klesnc.edu.in
+
 
 4. Start the server:
 ```bash
@@ -81,6 +92,6 @@ frontend css/
 - `node_modules/` is ignored in this repo.
 
 ## Troubleshooting
-- If the server won’t start, check that port 3000 is free.
+- If the server wonâ€™t start, check that port 3000 is free.
 - If DB connection fails, confirm MySQL is running and `.env` values are correct.
 - If no questions are generated, verify `GEMINI_API_KEY`.
