@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AptiLab - Student Aptitude Testing Portal</title>
+    <link rel="stylesheet" href="../frontend css/login.css">
+</head>
+<body>
+    <!-- Background -->
+    <div class="background">
+        <!-- Gradient Orbs -->
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+
+        <!-- Neural Network Pattern -->
+        <div class="neural-network" id="neuralNetwork"></div>
+
+        <!-- Particles -->
+        <div id="particles"></div>
+    </div>
+
+    <!-- Logo -->
+    <div class="logo">
+        <img src="https://i.postimg.cc/XJrmH4LP/Whats-App-Image-2026-02-05-at-4-09-06-PM.jpg" alt="AptiLab Logo">
+        <span class="logo-text">AptiLab</span>
+    </div>
+    
+    <!-- Main Container -->
+    <div class="container">
+        <!-- About Us -->
+        <section class="about-section">
+            <h2 class="about-title">About AptiLab</h2>
+            <p class="about-text">
+                AptiLab is a modern online aptitude and assessment platform designed to help students evaluate and improve their logical, quantitative, and analytical skills. It provides a smart and user-friendly environment where learners can take tests, track their performance, and understand their strengths and areas for improvement. With real-time results and meaningful insights, AptiLab supports students in preparing for academic exams, competitive tests, and career opportunities with confidence.
+            </p>
+        </section>
+
+        <!-- Glassmorphic Card -->
+        <div class="glass-card">
+            <div class="card-content">
+                <!-- Login Form -->
+                <div class="form-container active" id="loginForm">
+                    <div class="form-header">
+                        <h2 class="form-title">Welcome Back</h2>
+                        <p class="form-subtitle">Login to access your aptitude tests</p>
+                    </div>
+
+                    <div class="success-message" id="loginSuccess"></div>
+                    <div class="error-message" id="loginError"></div>
+
+                    <form onsubmit="handleLogin(event)">
+                        <div class="form-group">
+                            <label class="form-label" for="loginEmail">Email Address</label>
+                            <input 
+                                type="email" 
+                                id="loginEmail" 
+                                name="loginEmail"
+                                class="form-input" 
+                                placeholder="Enter your email"
+                                required
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="loginPassword">Password</label>
+                            <input 
+                                type="password" 
+                                id="loginPassword" 
+                                name="loginPassword"
+                                class="form-input" 
+                                placeholder="Enter your password"
+                                required
+                            />
+                        </div>
+
+                        <div class="forgot-password">
+                            <a href="#" onclick="showForgotPassword(event)">Forgot Password?</a>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Login</button>
+
+                        <div class="toggle-form">
+                            New User?
+                            <a href="#" onclick="toggleForm(event, 'register')">Register</a>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Registration Form -->
+                <div class="form-container" id="registerForm">
+                    <div class="form-header">
+                        <h2 class="form-title">Create Account</h2>
+                        <p class="form-subtitle">Join AptiLab to start your journey</p>
+                    </div>
+
+                    <div class="success-message" id="registerSuccess"></div>
+                    <div class="error-message" id="registerError"></div>
+
+                    <form onsubmit="handleRegister(event)">
+                        <div class="form-group">
+                            <label class="form-label" for="registerName">Student Name</label>
+                            <input 
+                                type="text" 
+                                id="registerName" 
+                                name="registerName"
+                                class="form-input" 
+                                placeholder="Enter your full name"
+                                required
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="registerEmail">Email Address</label>
+                            <input 
+                                type="email" 
+                                id="registerEmail" 
+                                name="registerEmail"
+                                class="form-input" 
+                                placeholder="Enter your email"
+                                required
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="registerPassword">New Password</label>
+                            <input 
+                                type="password" 
+                                id="registerPassword" 
+                                name="registerPassword"
+                                class="form-input" 
+                                placeholder="Create a password"
+                                required
+                            />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="registerConfirmPassword">Confirm Password</label>
+                            <input 
+                                type="password" 
+                                id="registerConfirmPassword" 
+                                name="registerConfirmPassword"
+                                class="form-input" 
+                                placeholder="Confirm your password"
+                                required
+                            />
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Create Account</button>
+
+                        <div class="toggle-form">
+                            Already have an account?
+                            <a href="#" onclick="toggleForm(event, 'login')">Login</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../frontend js/login.js"></script>
+</body>
+</html>
