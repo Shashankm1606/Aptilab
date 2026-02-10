@@ -1,3 +1,5 @@
+node.js version to be used Node.js v25.6.0
+
 # AptiLab - AI-Powered Aptitude Testing Platform
 
 AptiLab is a web app for running aptitude tests with AI-generated questions, user authentication, and result tracking.
