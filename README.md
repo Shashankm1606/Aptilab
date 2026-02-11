@@ -1,4 +1,6 @@
 node.js version to be used Node.js v25.6.0
+Run it from live server in vs code
+
 
 # AptiLab - AI-Powered Aptitude Testing Platform
 
