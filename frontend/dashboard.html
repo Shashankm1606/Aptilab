@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AptiLab - Student Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <link rel="stylesheet" href="/frontend-css/dashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Top Taskbar -->
+        <nav class="taskbar">
+            <div class="taskbar-left">
+                <div class="logo-stack">
+                    <img src="https://i.postimg.cc/XJrmH4LP/Whats-App-Image-2026-02-05-at-4-09-06-PM.jpg" alt="AptiLab Logo" class="logo-img">
+                    <h1 class="logo-text">AptiLab</h1>
+                </div>
+            </div>
+            
+            <div class="taskbar-center">
+                <button class="start-test-btn" onclick="startTest()">
+                    Start Test
+                </button>
+            </div>
+            
+            <div class="taskbar-right">
+                <!-- Reserved for future profile/settings -->
+            </div>
+        </nav>
+
+        <!-- Main Dashboard -->
+        <main class="dashboard-main">
+            <!-- Row 1 -->
+            <div class="dashboard-row">
+                <!-- User Profile Card -->
+                <div class="neo-card">
+                    <div class="card-content">
+                        <div class="profile-icon">👤</div>
+                        <h3 class="card-title">Shashank Muralidharan</h3>
+                        <p class="card-subtitle">shashank.m@aptilab.com</p>
+                        <div class="profile-avatar">👨‍🎓</div>
+                    </div>
+                </div>
+
+                <!-- Previous Tests Card -->
+                <div class="neo-card">
+                    <div class="card-content">
+                        <div class="card-header-icon">📊</div>
+                        <h3 class="card-title">Previous Tests</h3>
+                        <div class="test-list" id="previousTestsList">
+                            <div class="test-item">
+                                <span class="test-subject">No tests yet</span>
+                                <span class="test-score">--</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Topic Selection Card -->
+                <div class="neo-card">
+                    <div class="card-content">
+                        <div class="card-header-icon">📚</div>
+                        <h3 class="card-title">Choose Test Topic</h3>
+                        <div class="topic-chips" id="topicChips">
+                            <button class="topic-chip selected" onclick="selectTopic('Maths')">Maths</button>
+                            <button class="topic-chip" onclick="selectTopic('Networking')">Networking</button>
+                            <button class="topic-chip" onclick="selectTopic('Logic')">Logic</button>
+                            <button class="topic-chip" onclick="selectTopic('Cloud')">Cloud</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="dashboard-row">
+                <!-- Performance Chart Card -->
+                <div class="neo-card">
+                    <div class="card-content">
+                        <div class="card-header-icon">📈</div>
+                        <h3 class="card-title">Test Performance</h3>
+                        <div class="chart-container">
+                            <canvas id="performanceChart"></canvas>
+                        </div>
+                        <div class="performance-summary" id="performanceSummary">
+                            <span class="summary-label">Best Topic:</span>
+                            <span class="summary-value" id="bestTopicValue">--</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Subject Proficiency Card -->
+                <div class="neo-card">
+                    <div class="card-content">
+                        <div class="card-header-icon">🏆</div>
+                        <h3 class="card-title">Subject Proficiency</h3>
+                        <div class="proficiency-bars">
+                            <div class="proficiency-item">
+                                <div class="proficiency-label">
+                                    <span>Maths</span>
+                                    <span class="proficiency-percent" data-topic="Maths">--</span>
+                                </div>
+                                <div class="proficiency-bar-container">
+                                    <div class="proficiency-bar" data-topic="Maths" data-width="0"></div>
+                                </div>
+                            </div>
+                            <div class="proficiency-item">
+                                <div class="proficiency-label">
+                                    <span>Logic</span>
+                                    <span class="proficiency-percent" data-topic="Logic">--</span>
+                                </div>
+                                <div class="proficiency-bar-container">
+                                    <div class="proficiency-bar" data-topic="Logic" data-width="0"></div>
+                                </div>
+                            </div>
+                            <div class="proficiency-item">
+                                <div class="proficiency-label">
+                                    <span>Networking</span>
+                                    <span class="proficiency-percent" data-topic="Networking">--</span>
+                                </div>
+                                <div class="proficiency-bar-container">
+                                    <div class="proficiency-bar" data-topic="Networking" data-width="0"></div>
+                                </div>
+                            </div>
+                            <div class="proficiency-item">
+                                <div class="proficiency-label">
+                                    <span>Cloud</span>
+                                    <span class="proficiency-percent" data-topic="Cloud">--</span>
+                                </div>
+                                <div class="proficiency-bar-container">
+                                    <div class="proficiency-bar" data-topic="Cloud" data-width="0"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/frontend-js/dashboard.js"></script>
+</body>
+</html>
+
+
+

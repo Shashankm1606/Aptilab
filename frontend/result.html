@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AptiLab - Test Results Dashboard</title>
+    <link rel="stylesheet" href="/frontend-css/result.css">
+</head>
+<body>
+    <!-- Background -->
+    <div class="background">
+        <!-- Gradient Orbs -->
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+
+        <!-- Neural Network Pattern -->
+        <div class="neural-network" id="neuralNetwork"></div>
+
+        <!-- Grid Pattern -->
+        <div class="grid-pattern"></div>
+
+        <!-- Particles -->
+        <div id="particles"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <div class="logo-stack">
+                <img src="https://i.postimg.cc/XJrmH4LP/Whats-App-Image-2026-02-05-at-4-09-06-PM.jpg" alt="AptiLab Logo" class="logo-img">
+                <div class="logo-text">AptiLab</div>
+            </div>
+        </div>
+        <button class="btn-logout" onclick="handleLogout()">
+            <span class="logout-icon">⏻</span>
+            Logout
+        </button>
+    </header>
+
+    <!-- Main Container -->
+    <main class="container">
+        <!-- Dashboard Title -->
+        <div class="dashboard-header">
+            <h1 class="dashboard-title">Test Results</h1>
+            <p class="dashboard-subtitle">Your Aptitude Assessment Performance</p>
+        </div>
+
+        <!-- Results Grid -->
+        <div class="results-grid">
+            <!-- Score Card -->
+            <div class="glass-card score-card">
+                <div class="card-header">
+                    <h2 class="card-title">Your Score</h2>
+                    <span class="badge-success">Completed</span>
+                </div>
+                
+                <!-- Circular Progress -->
+                <div class="score-display">
+                    <svg class="progress-ring" width="200" height="200">
+                        <defs>
+                            <linearGradient id="progressGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#00ffaa;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle class="progress-ring-circle-bg" cx="100" cy="100" r="85"></circle>
+                        <circle class="progress-ring-circle" id="progressCircle" cx="100" cy="100" r="85"></circle>
+                    </svg>
+                    <div class="score-text">
+                        <div class="score-percentage" id="scorePercentage">--</div>
+                        <div class="score-fraction" id="scoreFraction">--/--</div>
+                    </div>
+                </div>
+
+                <!-- Score Details -->
+                <div class="score-details">
+                    <div class="score-detail-item">
+                        <span class="detail-label">Total Questions</span>
+                        <span class="detail-value" id="totalQuestions">--</span>
+                    </div>
+                    <div class="score-detail-item">
+                        <span class="detail-label">Correct Answers</span>
+                        <span class="detail-value" id="correctAnswers">--</span>
+                    </div>
+                    <div class="score-detail-item">
+                        <span class="detail-label">Time Taken</span>
+                        <span class="detail-value" id="timeTaken">--</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Action Cards -->
+        <div class="action-grid">
+            <!-- Email Result Card -->
+            <div class="glass-card email-card">
+                <div class="card-header">
+                    <h2 class="card-title">Send Result to Email</h2>
+                </div>
+                
+                <p class="card-description">Receive a detailed PDF report of your test results</p>
+                
+                <div class="success-message" id="emailSuccess"></div>
+                <div class="error-message" id="emailError"></div>
+                
+                <form class="email-form" onsubmit="handleSendEmail(event)">
+                    <div class="form-group">
+                        <label class="form-label" for="emailInput">Email Address</label>
+                        <input 
+                            type="email" 
+                            id="emailInput" 
+                            class="form-input" 
+                            placeholder="Enter your email address"
+                            required
+                        />
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="sendReportBtn" aria-busy="false">
+                        <span class="btn-icon">✉</span>
+                        <span class="btn-label">Send Report</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Retake Test Card -->
+            <div class="glass-card retake-card">
+                <div class="card-header">
+                    <h2 class="card-title">Want to Improve?</h2>
+                </div>
+                
+                <p class="card-description">Challenge yourself and retake the aptitude test to achieve a higher score</p>
+                
+                <button class="btn btn-secondary" onclick="handleRetakeTest()">
+                    <span class="btn-icon">↻</span>
+                    Retake Test
+                </button>
+
+                <div class="retake-info">
+                    <div class="info-item">
+                        <span class="info-icon">✓</span>
+                        <span class="info-text">Unlimited attempts available</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">✓</span>
+                        <span class="info-text">New set of questions</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 AptiLab. All rights reserved.</p>
+    </footer>
+
+    <script src="/frontend-js/result.js"></script>
+</body>
+</html>
+
+
+
