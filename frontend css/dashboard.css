@@ -1,0 +1,546 @@
+﻿/* ===========================
+   AptiLab Dashboard Styles
+   Neo Tech Blue Theme
+   =========================== */
+
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+/* ===========================
+   Dashboard Container
+   =========================== */
+
+.dashboard-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #0c4a6e 50%, #075985 75%, #0369a1 100%);
+    animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* ===========================
+   Taskbar / Navigation
+   =========================== */
+
+.taskbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.taskbar-left {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+.logo-img {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+.logo-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(59, 130, 246, 0.4);
+    color: white;
+    animation: pulse 2s infinite;
+    font-size: 1.5rem;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 8px 16px rgba(59, 130, 246, 0.4);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 8px 24px rgba(59, 130, 246, 0.6);
+    }
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #60a5fa 0%, #3b82f6 50%, #2dd4bf 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 0.5px;
+}
+
+.taskbar-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start-test-btn {
+    padding: 0.9rem 3rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(59, 130, 246, 0.5);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.start-test-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.start-test-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 12px 32px rgba(59, 130, 246, 0.7), 0 0 40px rgba(59, 130, 246, 0.4);
+}
+
+.start-test-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.start-test-btn:active {
+    transform: translateY(-1px) scale(1.02);
+}
+
+
+.taskbar-right {
+    min-width: 50px;
+}
+
+/* ===========================
+   Dashboard Main
+   =========================== */
+
+.dashboard-main {
+    padding: 2.5rem;
+    max-width: 1600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.dashboard-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===========================
+   Neo Card Base
+   =========================== */
+
+.neo-card {
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    min-height: 320px;
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.neo-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.8), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.neo-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+        0 16px 48px rgba(0, 0, 0, 0.4),
+        0 0 40px rgba(59, 130, 246, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+.neo-card:hover::before {
+    opacity: 1;
+}
+
+/* ===========================
+   Card Content
+   =========================== */
+
+.card-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+}
+
+.card-header-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(37, 99, 235, 0.2));
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
+    color: #60a5fa;
+    font-size: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #e0f2fe;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card-subtitle {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    margin-top: 0.5rem;
+}
+
+/* ===========================
+   User Profile Card
+   =========================== */
+
+.profile-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(37, 99, 235, 0.2));
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.3);
+    color: #60a5fa;
+    font-size: 2.5rem;
+}
+
+.profile-avatar {
+    font-size: 4rem;
+    margin-top: 1.5rem;
+    filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.3));
+}
+
+/* ===========================
+   Previous Tests Card
+   =========================== */
+
+.test-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.test-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.test-item:hover {
+    background: rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.3);
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+}
+
+.test-subject {
+    font-weight: 500;
+    color: #e0f2fe;
+}
+
+.test-score {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #22d3ee;
+    text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+}
+
+/* ===========================
+   Topic Selection Card
+   =========================== */
+
+.topic-chips {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+}
+
+.topic-chip {
+    padding: 0.7rem 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #e0f2fe;
+    background: rgba(59, 130, 246, 0.15);
+    border: 2px solid rgba(59, 130, 246, 0.3);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.topic-chip:hover {
+    background: rgba(59, 130, 246, 0.25);
+    border-color: rgba(59, 130, 246, 0.5);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.topic-chip.selected {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    border-color: #60a5fa;
+    color: white;
+    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.5), 0 0 20px rgba(59, 130, 246, 0.3);
+    transform: scale(1.05);
+}
+
+/* ===========================
+   Performance Chart
+   =========================== */
+
+.chart-container {
+    width: 100%;
+    height: 200px;
+    margin-top: 1rem;
+    position: relative;
+}
+
+/* ===========================
+   Subject Proficiency
+   =========================== */
+
+.proficiency-bars {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.proficiency-item {
+    width: 100%;
+}
+
+.proficiency-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    color: #e0f2fe;
+    font-weight: 500;
+}
+
+.proficiency-percent {
+    color: #22d3ee;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(34, 211, 238, 0.5);
+}
+
+.proficiency-bar-container {
+    width: 100%;
+    height: 12px;
+    background: rgba(15, 23, 42, 0.5);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+
+.proficiency-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #3b82f6 0%, #2563eb 50%, #22d3ee 100%);
+    border-radius: 10px;
+    width: 0%;
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.6);
+    position: relative;
+}
+
+.proficiency-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* ===========================
+   Responsive Design
+   =========================== */
+
+@media (max-width: 1200px) {
+    .dashboard-row {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .taskbar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .taskbar-center {
+        width: 100%;
+    }
+
+    .start-test-btn {
+        width: 100%;
+    }
+
+    .dashboard-main {
+        padding: 1.5rem;
+    }
+
+    .dashboard-row {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .logo-text {
+        font-size: 1.5rem;
+    }
+
+    .card-title {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .taskbar-left {
+        gap: 0.5rem;
+    }
+
+    .logo-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .logo-text {
+        font-size: 1.3rem;
+    }
+
+    .start-test-btn {
+        padding: 0.7rem 2rem;
+        font-size: 1rem;
+    }
+
+    .dashboard-main {
+        padding: 1rem;
+    }
+
+    .neo-card {
+        padding: 1.5rem;
+    }
+}
+
+/* Ensure color emoji glyphs render correctly */
+.profile-icon, .profile-avatar, .card-header-icon {
+    font-family: 'Segoe UI Emoji', 'Apple Color Emoji', 'Noto Color Emoji', sans-serif;
+}

@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Assessment - Test</title>
+    <link rel="stylesheet" href="/frontend-css/test.css">
+</head>
+<body>
+    <!-- Background effects -->
+    <div class="bg-effects">
+        <div class="bg-gradient"></div>
+        <div class="bg-grid"></div>
+    </div>
+
+    <!-- Main container -->
+    <div class="container">
+        <!-- Header with logo and timer -->
+        <header class="header">
+            <div class="logo-stack">
+                <img src="https://i.postimg.cc/XJrmH4LP/Whats-App-Image-2026-02-05-at-4-09-06-PM.jpg" alt="AptiLab Logo" class="logo-img">
+                <span class="logo-text">AptiLab</span>
+            </div>
+            <div class="timer-container" id="timerContainer">
+                <div class="timer-label">Time Remaining</div>
+                <div class="timer-display" id="timerDisplay">02:00</div>
+            </div>
+        </header>
+
+        <!-- Welcome screen -->
+        <div class="welcome-screen" id="welcomeScreen">
+            <div class="welcome-card glass-panel">
+                <div class="icon-circle">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 11l3 3L22 4"></path>
+                        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+                    </svg>
+                </div>
+                <h1>Ready to Begin?</h1>
+                <p class="welcome-text">
+                    This assessment contains <strong>10 questions</strong> and you'll have 
+                    <strong>2 minutes</strong> to complete it.
+                </p>
+                <div class="instructions">
+                    <h3>Instructions:</h3>
+                    <ul>
+                        <li>Read each question carefully</li>
+                        <li>Select one answer per question</li>
+                        <li>You can review and change answers before submitting</li>
+                        <li>Submit before time runs out</li>
+                    </ul>
+                </div>
+                <button class="btn-primary btn-glow" id="startTestBtn">
+                    <span>Start Test</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Test screen -->
+        <div class="test-screen hidden" id="testScreen">
+            <!-- Progress bar -->
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+                <div class="progress-text" id="progressText">0/10 Answered</div>
+            </div>
+
+            <!-- Questions container -->
+            <div class="questions-container" id="questionsContainer">
+                <!-- Questions will be dynamically injected here -->
+            </div>
+
+            <!-- Submit button -->
+            <div class="submit-container">
+                <button class="btn-submit btn-glow" id="submitTestBtn">
+                    <span>Submit Test</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Time's up modal -->
+        <div class="modal hidden" id="timeUpModal">
+            <div class="modal-content glass-panel">
+                <div class="modal-icon warning">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                </div>
+                <h2>Time's Up!</h2>
+                <p>Your test has been automatically submitted.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/frontend-js/test.js"></script>
+</body>
+</html>
+
