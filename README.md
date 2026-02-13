@@ -1,8 +1,10 @@
-node.js version to be used Node.js v25.6.0
-Run it from live server in vs code
+
 
 
 # AptiLab - AI-Powered Aptitude Testing Platform
+node.js version to be used Node.js v25.6.0
+Run it from live server in vs code
+
 
 AptiLab is a web app for running aptitude tests with AI-generated questions, user authentication, and result tracking.
 
@@ -34,7 +36,10 @@ USE aptitude_db;
 3. Create a `.env` file in `backend/`:
 ```env
 
-
+GEMINI_API_KEY="Your api key"
+GEMINI_API_MODEL="gemini-2.5-flash"
+#Enter your api key to configure this project
+#Itll run only once you enter your api key or else it wil return failed to generate questions from AI Chat Bot to ensure it doesnt fail create .env folder with these changes 
 # MySQL Database Configuration
 DB_HOST=127.0.0.1
 DB_USER=root
